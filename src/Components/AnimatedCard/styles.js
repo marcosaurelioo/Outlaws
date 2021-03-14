@@ -6,6 +6,7 @@ const CloseBigCard = keyframes`
   }
   to {
    opacity: 0;
+   display: none;
   }
 `;
 
@@ -14,6 +15,7 @@ const OpenBigCard = keyframes`
    opacity: 0;
   }
   to {
+   display: flex;
    opacity: 1;
   }
 `;
@@ -29,12 +31,22 @@ const OpenSmallCard = keyframes`
   }
 `;
 
+const openModel = keyframes`
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+`;
+
 export const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   pointer-events: all !important;
+  animation: ${openModel} 1s cubic-bezier(0.23, 1, 0.32, 1);
   width: 100%;
 `;
 
@@ -50,14 +62,17 @@ export const CardContent = styled.div`
     ${({ open }) =>
       open &&
       css`
+        width: 100% !important;
         #largecard {
           animation: ${CloseBigCard} 0.4s ease;
           opacity: 0;
+          display: none;
         }
         #smallcard {
           animation: ${OpenSmallCard} 0.7s ease;
           opacity: 1;
           display: flex !important;
+          max-width: 360px;
         }
       `}
   }
@@ -69,6 +84,7 @@ export const CardContent = styled.div`
         #largecard {
           animation: ${OpenBigCard} 0.4s ease;
           opacity: 1;
+          display: flex;
         }
       `}
   }
@@ -115,7 +131,6 @@ export const SmallCard = styled.div`
     position: relative;
     display: none;
     width: 100%;
-    right: 25%;
   }
   width: 360px;
   height: 202px;

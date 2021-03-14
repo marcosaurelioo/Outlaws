@@ -6,7 +6,7 @@ import { ReactComponent as Github } from "../../Assets/Github.svg";
 import { ReactComponent as Linkedin } from "../../Assets/Linkedin.svg";
 import { Container, CardContent, LargeCard, SmallCard } from "./styles";
 import { useWindowWidth } from "../../hooks/useWindowWidth";
-import Jupiter from "../../Assets/Images/jupiter.jpg";
+import Red from "../../Assets/Images/Red.jpg";
 
 export default function MarcosCard() {
   const isMobile = useWindowWidth() < 1200;
@@ -27,7 +27,7 @@ export default function MarcosCard() {
     <Container id="card">
       <CardContent data-depth="0.2" onClick={setState} open={open}>
         <LargeCard id="largecard" open={open}>
-          <img src="https://images.hdqwalls.com/wallpapers/red-moon-8q.jpg" alt="" draggable="false" />
+          <img src={Red} alt="" draggable="false" />
           <div className="title">
             <h1>Marcos</h1>
           </div>

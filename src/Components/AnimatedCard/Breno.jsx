@@ -6,6 +6,7 @@ import { ReactComponent as Github } from "../../Assets/Github.svg";
 import { ReactComponent as Linkedin } from "../../Assets/Linkedin.svg";
 import { Container, CardContent, LargeCard, SmallCard } from "./styles";
 import { useWindowWidth } from "../../hooks/useWindowWidth";
+import SecondImage from "../../Assets/Images/Secondplanet.jpg";
 
 export default function MarcosCard() {
   const isMobile = useWindowWidth() < 1200;
@@ -26,11 +27,7 @@ export default function MarcosCard() {
     <Container id="card">
       <CardContent data-depth="0.2" onClick={setState} open={open}>
         <LargeCard id="largecard">
-          <img
-            src="https://i.pinimg.com/originals/f9/d9/87/f9d98766079d82e5a996c2f648ce926d.jpg"
-            alt=""
-            draggable="false"
-          />
+          <img src={SecondImage} alt="" draggable="false" />
           <div className="title">
             <h1>Breno</h1>
           </div>

@@ -6,6 +6,7 @@ import { ReactComponent as Github } from "../../Assets/Github.svg";
 import { ReactComponent as Linkedin } from "../../Assets/Linkedin.svg";
 import { Container, CardContent, LargeCard, SmallCard } from "./styles";
 import { useWindowWidth } from "../../hooks/useWindowWidth";
+import FirstPlanet from "../../Assets/Images/Firstplanet.jpg";
 
 export default function MarcosCard() {
   const isMobile = useWindowWidth() < 1200;
@@ -27,7 +28,7 @@ export default function MarcosCard() {
       <CardContent data-depth="0.2" onClick={setState} open={open}>
         <LargeCard id="largecard">
           <img
-            src="https://media.discordapp.net/attachments/817388666706985001/820736628980056074/fundo-de-espaco-3d-com-planetas-ficticios_1048-8852.jpg"
+            src={FirstPlanet}
             alt=""
             draggable="false"
           />
