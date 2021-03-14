@@ -84,6 +84,7 @@ export const LargeCard = styled.div`
   position: relative;
   img {
     width: 100%;
+    max-height: 500px;
     height: 100%;
     object-fit: cover;
   }

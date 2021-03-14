@@ -24,10 +24,10 @@ export default function MarcosCard() {
 
   return (
     <Container id="card">
-      <CardContent data-depth="0.3" onClick={setState} open={open}>
+      <CardContent data-depth="0.2" onClick={setState} open={open}>
         <LargeCard id="largecard">
           <img
-            src="https://9to5mac.com/wp-content/uploads/sites/6/2018/08/xsw-featured.png"
+            src="https://media.discordapp.net/attachments/817388666706985001/820736628980056074/fundo-de-espaco-3d-com-planetas-ficticios_1048-8852.jpg"
             alt=""
             draggable="false"
           />

@@ -25,9 +25,9 @@ export default function MarcosCard() {
 
   return (
     <Container id="card">
-      <CardContent data-depth="0.3" onClick={setState} open={open}>
+      <CardContent data-depth="0.2" onClick={setState} open={open}>
         <LargeCard id="largecard" open={open}>
-          <img src={Jupiter} alt="" draggable="false" />
+          <img src="https://images.hdqwalls.com/wallpapers/red-moon-8q.jpg" alt="" draggable="false" />
           <div className="title">
             <h1>Marcos</h1>
           </div>

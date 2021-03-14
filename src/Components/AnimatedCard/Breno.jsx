@@ -24,10 +24,10 @@ export default function MarcosCard() {
 
   return (
     <Container id="card">
-      <CardContent data-depth="0.3" onClick={setState} open={open}>
+      <CardContent data-depth="0.2" onClick={setState} open={open}>
         <LargeCard id="largecard">
           <img
-            src="https://9to5mac.com/wp-content/uploads/sites/6/2018/08/xsw-featured.png"
+            src="https://i.pinimg.com/originals/f9/d9/87/f9d98766079d82e5a996c2f648ce926d.jpg"
             alt=""
             draggable="false"
           />
