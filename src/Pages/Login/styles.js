@@ -1,4 +1,29 @@
-import styled from "styled-components";
+import styled, { css, keyframes } from "styled-components";
+
+export const OpacityFadeOut = keyframes`
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+`;
+
+export const isOverFade = keyframes`
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    display: none;
+  }
+`;
 
 export const Body = styled.div`
   height: 100vh;
@@ -10,7 +35,27 @@ export const Body = styled.div`
     justify-content: flex-end;
     align-items: center;
     flex-direction: column;
+    background: #000;
+    opacity: 1;
   }
+  .btn-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  ${({ isPlaying }) =>
+    isPlaying &&
+    css`
+      .btn-content {
+        transition: all 2s ease-out;
+        opacity: 0;
+      }
+      .items-box {
+        transition: all 2s ease-out;
+        background: none;
+      }
+    `}
   .headphone-box {
     display: flex;
     align-items: center;
@@ -48,4 +93,88 @@ export const Body = styled.div`
       background: hsla(0, 0%, 100%, 0.15);
     }
   }
+
+  @keyframes teste {
+    0% {
+      filter: brightness(0.3) blur(15px);
+    }
+    90% {
+      filter: brightness(0.3) blur(15px);
+    }
+    100% {
+      filter: none;
+    }
+  }
+
+  video {
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 100vh;
+    max-height: 100vh;
+    object-fit: cover;
+    position: fixed;
+    transition: filter 2s ease-out;
+    ${({ isPlaying }) =>
+      !isPlaying &&
+      css`
+        transition: filter 2s ease-out;
+        filter: blur(10px);
+      `}
+    ${({ isPlaying }) =>
+      isPlaying &&
+      css`
+        animation: teste 13s ease;
+      `}
+  }
+`;
+
+export const Content = styled.div`
+  width: 100%;
+  height: 100%;
+  position: absolute;
+`;
+
+export const Paragraph = styled.div`
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 40px;
+  opacity: 0;
+  p {
+    color: rgba(255, 255, 255, 0.5) !important;
+    font-style: italic;
+    font-family: "Roboto Slab", serif;
+    font-weight: 100;
+    font-size: 16px;
+    letter-spacing: 5px;
+    text-align: center;
+    width: 500px;
+  }
+  span {
+    color: rgb(255, 255, 255) !important;
+    font-style: italic;
+    font-family: "Roboto Slab", serif;
+    font-weight: 100;
+    font-size: 12px;
+    letter-spacing: 5px;
+    text-align: center;
+    padding-top: 16px;
+  }
+  ${({ isPlaying }) =>
+    isPlaying &&
+    css`
+      animation: ${OpacityFadeOut} 13s ease;
+    `}
+`;
+
+export const Transition = styled.div`
+  ${({ isOver }) =>
+    isOver &&
+    css`
+      #login {
+        animation: ${isOverFade} 4s ease;
+        display: none;
+      }
+    `}
 `;
